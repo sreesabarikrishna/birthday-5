@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#cfe8ff">
+  <title>Happy Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="p0">
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+ 
+  <main class="stage">
+
+    <!-- PAGE 1: Happy Birthday + her name + button -->
+    <section class="page active" aria-label="Happy Birthday">
+      <div class="inner">
+        <h1 class="hb" id="hb" aria-label="Happy Birthday">Happy Birthday</h1>
+        <p class="her"><span data-name>Manju🤍</span></p>
+        <button class="btn primary big start" id="start" type="button">Open your surprise</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2: Cake cutting (song plays) -->
+    <section class="page" aria-label="Cake cutting">
+      <div class="inner">
+        <h2 class="title">Let's cut the cake!</h2>
+        <div class="cake-stage" id="cakeStage">
+          <div class="cake-3d" id="cake3d" role="img" aria-label="A birthday cake"></div>
+          <div class="cake-fallback" id="cakeFallback" hidden>🎂</div>
+        </div>
+        <button class="btn primary" id="cutBtn" type="button">Cut the cake</button>
+        <p class="hint" id="cakeMsg"></p>
+      </div>
+    </section>
+
+
+  <!-- Song: save your song in this folder as song.mp3 -->
+  <audio id="song" src="abhi-3.mpeg" loop preload="auto"></audio>
+  <button class="music" id="music" type="button" aria-label="Music on or off" hidden><span>♪</span></button>
+
+
+    <!-- PAGE 3: Photos (scroll down) -->
+    <section class="page" aria-label="Photos" id="photoPage">
+      <div class="inner wide">
+        <h2 class="title">Our photos</h2>
+        <p class="hint">Scroll down ↓</p>
+        <div class="photos">
+          <figure class="shot" style="--img:url(photo-1.jpeg); --r:-2deg"><span class="ph"></span><figcaption>Our first day</figcaption></figure>
+          <figure class="shot" style="--img:url(photo-2.jpeg); --r:2deg"><span class="ph"></span><figcaption>That smile</figcaption></figure>
+          <figure class="shot" style="--img:url(photo-3.jpeg); --r:-1.5deg"><span class="ph"></span><figcaption>Our favourite place</figcaption></figure>
+          <figure class="shot" style="--img:url(photo-4.jpeg); --r:2deg"><span class="ph"></span><figcaption>A day I loved</figcaption></figure>
+          <figure class="shot" style="--img:url(photo-5.jpeg); --r:-2deg"><span class="ph"></span><figcaption>Always laughing</figcaption></figure>
+          <figure class="shot" style="--img:url(photo-6.jpeg); --r:1.5deg"><span class="ph"></span><figcaption>Today</figcaption></figure>
+        </div>
+        <p class="hint">The best is still coming 💙</p>
+      </div>
+    </section>
+
+    <!-- PAGE 4: Love letter -->
+    <section class="page" aria-label="Love letter">
+      <div class="inner">
+        <h2 class="title">A letter for you</h2>
+
+        <button class="envelope" id="envelope" type="button" aria-label="Open the love letter">
+          <span class="e-back"></span>
+          <span class="e-paper"><i></i><i></i><i></i></span>
+          <span class="e-front"></span>
+          <span class="e-flap"></span>
+          <span class="e-seal">♥</span>
+        </button>
+        <p class="hint" id="envHint">Tap the envelope to open</p>
+
+        <div class="card" id="loveCard" hidden>
+          <p class="to" id="to">My love,</p>
+          <p class="letter" id="letter"></p>
+          <p class="sign" id="sign">Forever yours, <span id="from">Abhi💙</span></p>
+        </div>
+        <button class="btn primary reveal-btn" id="balloonBtn" type="button">Release the balloons</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav" aria-label="Pages">
+    <button class="btn ghost" id="back" type="button">Back</button>
+    <div class="dots" id="dots"></div>
+    <button class="btn primary" id="next" type="button">Next</button>
+  </nav>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="cake3d.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
